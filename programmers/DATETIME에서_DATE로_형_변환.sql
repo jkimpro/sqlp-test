@@ -1,0 +1,6 @@
+-- 코드를 입력하세요
+SELECT A.ANIMAL_ID ANIMAL_ID,
+        A.NAME NAME,
+        TO_CHAR(A.DATETIME, 'YYYY-MM-DD') 날짜
+        FROM ANIMAL_INS A
+        ORDER BY ANIMAL_ID;
