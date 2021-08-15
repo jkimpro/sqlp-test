@@ -1,0 +1,12 @@
+-- 코드를 입력하세요
+SELECT R.ID, R.NAME, R.HOST_ID
+    FROM PLACES R, (
+
+        SELECT P.HOST_ID HOST_ID, COUNT(HOST_ID) TOTAL
+        FROM PLACES P
+        GROUP BY HOST_ID
+        HAVING COUNT(HOST_ID) >=2
+        ORDER BY HOST_ID
+    ) D
+    WHERE R.HOST_ID = D.HOST_ID
+    
